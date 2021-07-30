@@ -44,12 +44,13 @@ var mongoose = require("mongoose");
 mongoose.set('useCreateIndex', true);
 // Set up a mongoose connection
 var mongoDBurl = "mongodb://localhost:27017/assigns";
-
+var MONGO_URL="mongodb+srv://mfibrahim:Mariam03@cluster0.7neuk.mongodb.net/assigns?retryWrites=true&w=majority"
 // mongoose.connect(mongoDBurl, {
 //   useNewUrlParser: true,
 //   useUnifiedTopology: true,
 // });
-mongoose.connect(process.env.MONGO_URL || mongoDBurl, {
+// mongoose.connect(process.env.MONGO_URL || mongoDBurl, {
+mongoose.connect(MONGO_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
