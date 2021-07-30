@@ -37,14 +37,14 @@ mongoose.set('useCreateIndex', true);
 // Set up a mongoose connection
 var mongoDBurl = "mongodb://localhost:27017/assigns";
 
-mongoose.connect(mongoDBurl, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
-// mongoose.connect(process.env.MONGO_URL || mongoDBurl, {
+// mongoose.connect(mongoDBurl, {
 //   useNewUrlParser: true,
 //   useUnifiedTopology: true,
 // });
+mongoose.connect(process.env.MONGO_URL || mongoDBurl, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 // Get the connection
 var db = mongoose.connection;
 // Bind connection to error event (to get notification of connection errors)
