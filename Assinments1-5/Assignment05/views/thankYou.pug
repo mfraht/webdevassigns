@@ -1,0 +1,22 @@
+extends layout
+
+
+
+block content
+
+    //- h1 Hi Hello
+    // Comment
+    
+    // banner
+    .banner3(style='text-align: center;')
+        h1(style=' font-size : 3vw; line-height: 100%;')
+            //- if currentUser
+            //-     |Thank you #{currentUser.fname} for contacting us
+            //- else 
+            |Thank you #{fname} for contacting us 
+            hr
+        div(style='padding-left: 15em;')
+            a(href='/')
+                h2.roundbtn Home page
+    // footer
+        

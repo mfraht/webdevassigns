@@ -1,0 +1,71 @@
+//- extends layout
+
+//- block content
+//-   h1= title
+//-   p Welcome to #{title}
+extends layout
+
+
+
+block content
+
+  header#demo-header
+    .banner2
+      .herotext2(style='align-items: center;')
+        .content.my-3
+          if mygreeting
+            //.alert.alert-success= message
+            h2.text-start= language
+            h1= mygreeting
+            h4.text-dark= "Date : "+date+",   Time: "+time
+            h2= msg
+      .herotext 
+        
+        h1(style='color: white;') Discover
+        h2(style='color: white;') We can make travel for everyone to everywhere.
+  // Intro
+  .galleryIntro
+    h2 Gallery
+  .flex-container
+    figure.flex-item
+      a(href='#')
+        img(src='img/page4_img2.jpg' alt='Lab')
+      figcaption NEW ZEALAND FROM $1.200
+    figure.flex-item
+      a(href='#')
+        img(src='img/tours-01.jpg' alt='Hat')
+      figcaption NEW YORK $6,600
+    figure.flex-item
+      a(href='#')
+        img(src='img/page2_img3.jpg' alt='Sleeping')
+      figcaption PARIS FROM $1.600
+    figure.flex-item
+      a(href='#')
+        img(src='img/page2_img4.jpg' alt='Pug')
+      figcaption CANADA FROM $2000
+    figure.flex-item
+      a(href='#')
+        img(src='img/page2_img5.jpg' alt='Whats that?')
+      figcaption TURKEY FROM $1.500
+    figure.flex-item
+      a(href='#')
+        img(src='img/page2_img6.jpg' alt='Lab')
+      figcaption EGYPT FROM $1.500
+    figure.flex-item
+      a(href='#')
+        img(src='img/page3_img1.jpg' alt='Golden Retriever')
+      figcaption BARCELONA FROM $1000
+    figure.flex-item
+      a(href='#')
+        img(src='img/page3_img2.jpg' alt='Border Collie')
+      figcaption MOSCOW FROM $1500
+    figure.flex-item
+      a(href='#')
+        img(src='img/page3_img3.jpg' alt='Border Collie')
+      figcaption THAILAND FROM $1500
+    figure.flex-item
+      a(href='#')
+        img(src='img/page4_img1.jpg' alt='Border Collie')
+      figcaption LONDON FROM $1000 
+  // Comment
+  

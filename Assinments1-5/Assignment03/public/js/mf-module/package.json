@@ -1,0 +1,17 @@
+{
+  "name": "sendgreetings",
+  "version": "1.0.0",
+  "description": "A simple package greetings",
+  "main": "sendgreetings.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Ramdom",
+    "Greeting",
+    "Welcome"
+  ],
+  "author": "Luke Hayes",
+  "license": "MIT",
+  "readmeFilename": "README.md"
+}

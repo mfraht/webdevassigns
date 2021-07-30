@@ -1,0 +1,19 @@
+{
+  "name": "assignment03",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "author": "Mohamed Ibrahim",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "jsdom": "^16.6.0",
+    "random-greetings": "^1.0.5"
+  }
+}

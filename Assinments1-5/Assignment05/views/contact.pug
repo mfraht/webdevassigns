@@ -1,0 +1,56 @@
+extends layout
+
+block content
+
+    // Comment
+    header#demo-header
+
+        // banner
+        .banner3
+            .herotext
+                h1(style='color: white;') Discover Travel Inc
+                h2(style='color: blue;') FOR UPCOMING HOLIDAYS
+    // Intro
+    .contact-grid-container
+        .intro.p-lr
+            h2 Contact Us
+            p(style='color: black;')
+                | Our travel brands enable every sort of traveller not just find the vacation that&apos;s ideal for them,
+                | but also get the best value every time, no matter who they are or where they&apos;re going.
+        //Contact form
+        .contactform.p-lr
+            form(method='POST' action='/contact')
+                p
+                    label(for='fname') First Name 
+                    input#fname(type='text' name='firstname' placeholder='Your name..' required value=postdata && postdata.firstname)
+                p
+                    label(for='lname') Last Name 
+                    input#lname(type='text' name='lastname' placeholder='Your last name..' required value=postdata && postdata.lastname)
+                p
+                    label(for='emailadd') Email 
+                    input#emailadd(type='email' name='mail' placeholder='Email address' required value=postdata && postdata.mail)
+                p
+                    label(for='comment') Comment or Question 
+                    textarea#comment(name='comment' placeholder='Comment...' rows='5' required value=postdata && postdata.comment)
+                //- <p><label><input type="checkbox" name="lab"> Add me to your Newsletter</label></p>
+                input.roundbtn(type='submit' value='Submit')
+                if errors    
+                    each error in errors
+                        p.alert.alert-danger= error
+                            //- .alert.alert-success= errors
+
+        // map
+        .map
+            figure(style='padding:60px 0px 0px 0px;')
+            img(src='img/world_map.jpg' alt='world-map')
+            figcaption
+    .contact-grid-container
+        .intro.p-lr
+            h3 Contacts
+            p(style='color: black;')
+                | You can call us at the following numbers:
+            ul
+                li(style='color: black;')
+                    | Local (toll-free): (800) 468-1579
+                li(style='color: black;')
+                    | From abroad (charges apply): +1 414-321-0123

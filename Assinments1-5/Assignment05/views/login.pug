@@ -1,0 +1,15 @@
+if !hideLogin
+    .bg-dark
+        form.row.g-3(action="/login" method="POST")
+            .col
+                h5.text-white Please Log In
+            .col
+                input.form-control(name="username" type="text" placeholder="Username" )
+                input.form-control(name="password" type="password" placeholder="Password")
+            .col
+                button.btn.btn-primary.mb-2 Log In
+                button.btn-primary
+                    a(href="/users/sign-up" style='color:black;') Register
+        if errors    
+            //- each error in errors
+            .alert(style='width: 15rem;').alert-danger= errors

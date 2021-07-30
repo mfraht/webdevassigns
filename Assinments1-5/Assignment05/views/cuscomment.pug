@@ -1,0 +1,36 @@
+extends layout
+
+block content
+
+    // Comment
+    header#demo-header
+
+        // banner
+        .banner3
+            .herotext
+                h1(style='color: white;') Discover Travel Inc
+                h2(style='color: lightgrey;') FOR UPCOMING HOLIDAYS
+    // Intro
+    .container 
+        h3|Thank you #{fname} for contacting us
+        br
+        h3 Your comment details are:
+        hr
+        //Contact form
+        .contact
+            form(method='' action='/contact/thankYou')
+                .card(style='width: 50rem;')
+                    .card-header
+                        br
+                        | First Name: #{fname}
+                        br
+                    ul.list-group.list-group-flush
+                        br
+                        li.list-group-item Last Name: #{lname}
+                        br
+                        li.list-group-item Email Address: #{email}
+                        br
+                        li.list-group-item Comments: #{comment} 
+                        
+                br
+                input.roundbtn(type='Submit' value='Save')
