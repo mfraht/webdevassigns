@@ -4,13 +4,10 @@ var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 
-const dotenv = require('dotenv').config()
-
-
-
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 var postRouter = require("./routes/post");
+
 var contactRouter = require("./routes/contact");
 var dataProxRouter = require("./routes/data-proxy");
 
@@ -28,10 +25,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
-// app.use(express.cookieParser('secret'));
-// app.use(express.cookieSession());
-
-
 // to replace prohibited characters with _, use:
 app.use(
   mongoSanitize({
@@ -44,13 +37,12 @@ var mongoose = require("mongoose");
 mongoose.set('useCreateIndex', true);
 // Set up a mongoose connection
 var mongoDBurl = "mongodb://localhost:27017/assigns";
-var MONGO_URL="mongodb+srv://mfibrahim:Mariam03@cluster0.7neuk.mongodb.net/assigns?retryWrites=true&w=majority"
+
 // mongoose.connect(mongoDBurl, {
 //   useNewUrlParser: true,
 //   useUnifiedTopology: true,
 // });
-// mongoose.connect(process.env.MONGO_URL || mongoDBurl, {
-mongoose.connect(MONGO_URL, {
+mongoose.connect(process.env.MONGO_URL || mongoDBurl, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
@@ -76,6 +68,7 @@ app.use((req, res, next) => {
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/post", postRouter);
+
 app.use("/contact", contactRouter);
 app.use("/_dash*", dataProxRouter);
 

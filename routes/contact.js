@@ -3,6 +3,21 @@ var router = express.Router();
 const Contacts = require("../models/contactMdl").contacts;
 const { User } = require("../models/user");
 
+
+router.get("/comments", function (req, res, next) {
+  // Contacts.find({}, (err, Contacts) => {
+  //   if (err) throw err;
+  //   res.render("comments", { title: "Contacts", Contacts });
+  // });
+  Contacts.find()
+    .populate("user") //This populates the user id with actual user information!
+    .exec(function (err, Contacts) {
+      if (err) throw err;  
+      res.render("comments", { Contacts });
+  });
+});
+
+
 // Show the contact form
 router.get("/", function (req, res, next) {
   res.render("contact");
@@ -17,13 +32,13 @@ router.post("/", function (req, res, next) {
   contact.mail = req.body.mail;
   contact.comment = req.body.comment;
 
-  //console.log(req.body.firstname);
+  console.log(req.body.firstname);
 
   contact.user = req.user._id;
   contact.save((err) => {
     // if(err) throw err;
     if (err) {
-      //console.log(err);
+      console.log(err);
       //res.render("thankYou", err);
       const errorArray = [];
       const errorKeys = Object.keys(err.errors);
@@ -48,9 +63,19 @@ router.get("/thankYou", (req, res, next) => {
   res.render("thankYou", { fname });
 });
 
-router.get("/comments", function (req, res, next) {
-  res.render("comments");
-});
+// router.get("/auth/:uname", function (req, res, next) {
+//   // Using the given username paramter, find the user(auther) object from the DB
+//   // Use the user _id from the user object, to find all posts for the _id
+//   User.findOne({ username: req.params.uname }, (err, author) => {
+//     if (err) return processErrors(err, "comments", req, res);
+    
+//     contacts.find({ user: author._id }, (err, comments) => {
+//       if (err) return processErrors(err, "comments", req, res);
+      
+//       res.render("comments-author", { user: author.username, blogcomments: comments });
+//     });
+//   });
+// });
 
 router.get("/comments-author", function (req, res, next) {
   res.render("comments-author");

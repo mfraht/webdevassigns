@@ -1,20 +1,15 @@
 extends layout
 
 block content
-    h2 All comments
-    h2.text-danger It is working :) , uncomment the rest of the code
-    p #{contcomments}
-
-    //- form(method="GET" action="/contact")
-    //- button.btn.btn-success(type="submit") contact us!
-
-    //- if contcomments
-    //-     each comment in contcomments
-    //-     .card
-    //-         .card-body
-    //-         a(href="/contact/" + comment.firstname) 
-    //-         //- .card-title #{comment.firstname}
-    //-         p.card-text= comment.comment
-    //-         //- p 
-    //-         //-     | Auther: 
-    //-         //-     a(href='/contact/comments-author/' + post.user.username)= post.user.fname + ' ' + post.user.lname
+    .container
+        h2 All comments
+            each prod in Contacts    
+                .row
+                    .card.col-12.border-danger
+                        h4.card-text
+                            | Name: #{prod.firstname} #{prod.lastname}
+                        h5.card-text
+                            | email: #{prod.mail}
+                        h5.card-body
+                            | Comments: #{prod.comment}
+            a.btn.btn-primary.col-12(href='/') Home Page

@@ -2,6 +2,7 @@
 var mongoose = require("mongoose");
 mongoose.set('useCreateIndex', true);
 const uniqueValidator = require("mongoose-unique-validator");
+
 const contactSchema = new mongoose.Schema({
     firstname: {
         type: String,

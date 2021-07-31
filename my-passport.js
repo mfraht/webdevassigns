@@ -12,8 +12,7 @@ msg = null;
 module.exports.init = function (app) {
   app.use(
     require("express-session")({
-      secret: "sdflkjs;fiouer089fguerpgjpofxd",
-      // PASSPORT_SECRET="sdflkjs;fiouer089fguerpgjpofxd"
+      secret: process.env.PASSPORT_SECRET,
       resave: true,
       saveUninitialized: true,
     })
@@ -53,32 +52,6 @@ module.exports.init = function (app) {
     })
   );
 
-  
-  
-
-  // passport.use(
-  //   // Do the login check
-  //   new LocalStrategy2(function (fname, done) {
-  //     contact.findOne({ fname: fname }, function (err, cuser) {
-  //       if (err) {
-  //         return done(err);
-  //       } // Error loading user from DB
-  //       // if (!cuser) {
-  //       //   return done(null, false);
-  //       // } // No user
-  //       // bcrypt.compare(password, user.password, (err, res) => {
-  //       //   if (res) {
-  //       //     // passwords match! log user in
-  //       //     return done(null, user);
-  //       //   } else {
-  //       //     // passwords do not match!
-  //       //     return done(null, false, { msg: "Incorrect password" });
-  //       //   }
-  //       // });
-  //       return done(null, cuser);
-  //     });
-  //   })
-  // );
   // Serialize the User ID
   passport.serializeUser(function (user, done) {
     //res.locals.errors = req.msg;
