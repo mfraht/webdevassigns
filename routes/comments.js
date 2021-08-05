@@ -13,7 +13,7 @@ router.get("/", function (req, res, next) {
     .find()
     // .populate("user") //This populates the user id with actual user information!
     .exec(function (err, comments) {
-      console.log(comments);
+      //console.log(comments);
       if (err) throw err;
       res.render("comments", { contcomments: comments });
     });
