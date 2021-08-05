@@ -10,7 +10,7 @@ router.get("/comments", function (req, res, next) {
   //   res.render("comments", { title: "Contacts", Contacts });
   // });
   Contacts.find()
-    .populate("user") //This populates the user id with actual user information!
+    .populate("User") //This populates the user id with actual user information!
     .exec(function (err, Contacts) {
       if (err) throw err;  
       res.render("comments", { Contacts });
