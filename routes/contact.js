@@ -34,7 +34,7 @@ router.post("/", function (req, res, next) {
 
   console.log(req.body.firstname);
 
-  // contact.user = req.user._id;
+  //contact.user = req.user._id;
   contact.save((err) => {
     // if(err) throw err;
     if (err) {

@@ -69,7 +69,7 @@ router.post("/create", function (req, res, next) {
   post.postbody = req.body.postbody;
   post.posturl = req.body.posturl;
   // console.log(req.user);
-  // post.user = req.user._id;
+  //post.user = req.user._id;
   post.save((err) => {
     // if(err) throw err;
     if (err) {
