@@ -34,7 +34,7 @@ router.post("/", function (req, res, next) {
 
   console.log(req.body.firstname);
 
-  contact.user = req.user._id;
+  //contact.user = req.user._id;
   contact.save((err) => {
     // if(err) throw err;
     if (err) {
@@ -63,19 +63,7 @@ router.get("/thankYou", (req, res, next) => {
   res.render("thankYou", { fname });
 });
 
-// router.get("/auth/:uname", function (req, res, next) {
-//   // Using the given username paramter, find the user(auther) object from the DB
-//   // Use the user _id from the user object, to find all posts for the _id
-//   User.findOne({ username: req.params.uname }, (err, author) => {
-//     if (err) return processErrors(err, "comments", req, res);
-    
-//     contacts.find({ user: author._id }, (err, comments) => {
-//       if (err) return processErrors(err, "comments", req, res);
-      
-//       res.render("comments-author", { user: author.username, blogcomments: comments });
-//     });
-//   });
-// });
+
 
 router.get("/comments-author", function (req, res, next) {
   res.render("comments-author");

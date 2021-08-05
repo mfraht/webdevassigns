@@ -38,15 +38,15 @@ html
               li
                 a(href='/') Home  
                 
-    .content
-      if currentUser
-        h3.row.g-1
-            .col.mb-2
-              span Welcome Back #{currentUser.fname}
-            .col.mb-9 
-              a(href="/log-out") Log Out
-      else
-        include login.pug
+    //- .content
+    //-   if currentUser
+    //-     h3.row.g-1
+    //-         .col.mb-2
+    //-           span Welcome Back #{currentUser.fname}
+    //-         .col.mb-9 
+    //-           a(href="/log-out") Log Out
+    //-   else
+    //-     include login.pug
     
     //- .container
     //-   include nav.pug
