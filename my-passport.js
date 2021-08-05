@@ -12,7 +12,7 @@ msg = null;
 module.exports.init = function (app) {
   app.use(
     require("express-session")({
-      secret: "sdflkjs;fiouer089fguerpgjpofxd",
+      secret: process.env.PASSPORT_SECRET,
       resave: true,
       saveUninitialized: true,
     })

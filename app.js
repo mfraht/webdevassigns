@@ -52,7 +52,7 @@ var db = mongoose.connection;
 db.on("error", console.error.bind(console, "MongoDB connection error:"));
 
 db.once("open", function () {
-  console.log("we're connected!");
+  console.log(`we're connected! Port: ${process.env.PORT}`);
 });
 // -------------------------------------------------------------
 // For Passport.js
