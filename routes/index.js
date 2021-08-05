@@ -1,13 +1,14 @@
 var express = require('express');
 var router = express.Router();
 var greeting = require('../mf-module');
-//var moment = require('moment');
 var moment = require('moment-timezone');
-moment().tz("America/Edmonton").format();
 
 router.get('/', function (req, res) {
-  res.render('index', { mygreeting: greeting.greeting(), language: greeting.lang(), date: moment().format("dddd, MMMM Do YYYY"), time: moment().format("h:mm:ss a")});
+  res.render('index', { mygreeting: greeting.greeting(), language: greeting.lang(), 
+  date: moment().tz("America/Edmonton").format("dddd, MMMM Do YYYY"), 
+  time: moment().tz("America/Edmonton").format("h:mm:ss a")});
 });
+
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
