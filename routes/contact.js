@@ -58,7 +58,7 @@ router.post("/", function (req, res, next) {
 
 router.get("/thankYou", (req, res, next) => {
   const  fname = req.session.fname;
-  //console.log(fname);
+  console.log(fname);
   // // req.session.firstname = null;
   res.render("thankYou", { fname });
 });
