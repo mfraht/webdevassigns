@@ -6,7 +6,7 @@ var logger = require("morgan");
 
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
-
+// var postRouter = require("./routes/post");
 
 var contactRouter = require("./routes/contact");
 var dataProxRouter = require("./routes/data-proxy");
@@ -34,7 +34,7 @@ app.use(
 // -------------------------------------------------------------
 // Configure the DB connection using Mongoose
 var mongoose = require("mongoose");
-//mongoose.set('useCreateIndex', true);
+mongoose.set('useCreateIndex', true);
 // Set up a mongoose connection
 var mongoDBurl = "mongodb://localhost:27017/assigns";
 
@@ -67,7 +67,7 @@ app.use((req, res, next) => {
 //  --------------------------------
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
-
+// app.use("/post", postRouter);
 
 app.use("/contact", contactRouter);
 app.use("/_dash*", dataProxRouter);
