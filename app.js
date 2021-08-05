@@ -34,7 +34,7 @@ app.use(
 // -------------------------------------------------------------
 // Configure the DB connection using Mongoose
 var mongoose = require("mongoose");
-mongoose.set('useCreateIndex', true);
+//mongoose.set('useCreateIndex', true);
 // Set up a mongoose connection
 var mongoDBurl = "mongodb://localhost:27017/assigns";
 
